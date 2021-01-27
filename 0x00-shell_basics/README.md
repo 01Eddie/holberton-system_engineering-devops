@@ -9,3 +9,7 @@ Learn basic of shell
 5. Directory content (Long format, group IDs,hidden files)
 6. Create a script that creates a directory named holberton in the /tmp/ directory.
 7. Move the file
+8. Delete the file
+9. Delete the directory
+10. Changes the working directory
+11. Scripts that lists all files in order and long format
