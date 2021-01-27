@@ -6,3 +6,4 @@ Learn basic of shell
 2. Script that changes the working directory to the user's home directory
 3. Directory contents in a long format
 4. Directory contents, including hidden files (starting with .). 
+5. Directory content (Long format, group IDs,hidden files)
