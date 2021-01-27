@@ -1,6 +1,5 @@
 # holberton-system_engineering-devops 
-Learn basic of shell
-```
+
 0. Where am I? 
 1. What’s in there? 
 2. There is no place like home 
@@ -20,4 +19,4 @@ Learn basic of shell
 16. Clean Emacs 
 17. Tree 
 18. Life is a series of commas, not periods
-```
+
