@@ -1,4 +1,4 @@
-# holberton-system_engineering-devops 
+#Holberton-system_engineering-devops 
 Learn basic of shell
 
 0. Prints the path name of the current working directory.
@@ -7,3 +7,4 @@ Learn basic of shell
 3. Directory contents in a long format
 4. Directory contents, including hidden files (starting with .). 
 5. Directory content (Long format, group IDs,hidden files)
+6. Create a script that creates a directory named holberton in the /tmp/ directory.
