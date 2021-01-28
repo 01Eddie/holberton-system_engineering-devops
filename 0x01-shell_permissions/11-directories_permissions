@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir && chmod 111 dir_permissions
+mkdir 111 dir_permissions
