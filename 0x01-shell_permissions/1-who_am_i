@@ -1,2 +1,2 @@
 #!/bin/bash 
-sudo d -u -n
+id -u -n
