@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir 111 dir_permissions
+mkdir u+x, g+x, o+x -R
