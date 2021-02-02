@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "obase=16;ibase=10;$DECIMAL" | bc
+echo "obase=16;ibase=10;$DECIMAL" | bc
