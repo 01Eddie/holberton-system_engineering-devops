@@ -1,2 +1,2 @@
 #!/bin/bash
-echo reverse | sed 's/./&\n/g' | tac | sed -e :a -e 'N;s/\n//g;ta'
+echo "reverse" | rev
