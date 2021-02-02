@@ -1,2 +1,6 @@
 #!/bin/bash
+<<<<<<< HEAD
 echo $((16#$DECIMAL))
+=======
+printf "$DECIMAL=%d\n" $((16#$DECIMAL))
+>>>>>>> b191695903b519cdffee3e116a84777ef7347410
