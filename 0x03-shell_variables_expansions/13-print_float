@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(($NUM%.2g))
+echo $($NUM(%.2f))
