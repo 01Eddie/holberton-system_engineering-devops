@@ -2,8 +2,8 @@
 # Bash script that displays Holberton School 10 times using until loop
 
 count=1
-while [ $count -le 10 ]
+until [ $count -gt 10 ]
 do
-	echo "Holberton School" &
+	echo "Holberton School"
 	((count++))
 done
