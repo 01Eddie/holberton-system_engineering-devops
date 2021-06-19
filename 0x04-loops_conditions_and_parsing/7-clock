@@ -3,7 +3,7 @@
 
 while true
 do
-	echo "Hour: $(date +%H)"
+	echo "Hour: $(date +%I)"
 	while true
 	do
 		echo "$(date +%M) "
