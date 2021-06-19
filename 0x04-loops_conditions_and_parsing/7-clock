@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # Bash script that displays Holberton School 10 times using while loop
-
-while true
+hour=0
+while [ $hour -le 12 ]
 do
-	echo "Hour: $(date +%I)"
-	while true
+	min=1
+	echo "Hour: $hour"
+	while [ $min -le 59 ]
 	do
-		echo "$(date +%M) "
-		sleep 60
+		echo "$min"
+		((min++))
 	done
+	((hour++))
 done
