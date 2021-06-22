@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Bash script that displays
+pkill -f "7-highlander" --signal SIGKILL
