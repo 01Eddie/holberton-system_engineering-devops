@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
-
+# Install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Holberton School" | sudo tee /var/www/html/index.html
+redirect_info="\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}"
+sudo sed -i "35i $redirect_info" /etc/nginx/sites-available/default
+sudo service nginx restart
