@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
-
+# Install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo service nginx start
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error_404.html
+redirect_error="\terror_page 404 /error_404.html; \n\tlocation  /error_404.html {\n\t\troot /var/www/html; \n\t\tinternal;}"
+sudo sed -i "36i\ $redirect_error" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
