@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# write a Bash script that will display information about subdomains
+# The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]
+awk 
+func ()
+{
+echo "The submain $1 is $2 record and points to $3"   # Echoes first arg passed to the function.
+}           # Does a command-line arg qualify?
+
+echo "First call to function: no arg passed."
+echo "See if command-line arg is seen."
+# func
+# No! Command-line arg not seen.
+
+echo "============================================================"
+echo
+echo "Second call to function: command-line arg passed explicitly."
+# func $1
+# Now it's seen!
+
+exit 0
