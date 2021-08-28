@@ -12,14 +12,14 @@ IP=$(echo $recordIP | awk '{print $2}')
 # The subdomain web-02 is a A record and points to 54.89.38.100
 echo "The submain $2 is $record record and points to $IP"
 }
-if [ $# -eq 1 ]
+if [ "$#" -eq 1 ]
 then
-funcDisplay $1 www
-funcDisplay $1 lb-01
-funcDisplay $1 web-01
-funcDisplay $1 web-02
-elif [ $# -eq 2 ]
+funcDisplay "$1" www
+funcDisplay "$1" lb-01
+funcDisplay "$1" web-01
+funcDisplay "$1" web-02
+elif [ "$#" -eq 2 ]
 then
-funcDisplay $1 $2
+funcDisplay "$1" "$2"
 fi
 exit 0
