@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 # Configure Nginx so that its HTTP response contains a custom header
 # Install nginx
-
 sudo apt-get -y update
 sudo apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sudo sed -i "/servername ;/ a\\trewrite ^/redirect_me http://www.holbertonschool.com/ permanent;" /etc/nginx/sites-available/default
-sudo sed -i "/servername ;/ a\\tadd_header X-Served-By "$HOSTNAME";" /etc/nginx/sites-available/default
-sudo sed -i "/redirect_me/ a\\terror_page 404 /error_404.html;" /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /var/www/html/error_404.html
-sudo service nginx start
+echo "Holberton School" > /var/www/html/index.html
+sudo sed -i "11i\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+redirect="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;/n/t%7D/n"
+sudo sed -i "37i\ $redirect" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
+err_page="\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+sudo sed -i "27i $err_page" /etc/nginx/sites-available/default
+service nginx start
 sudo service nginx restart
 sudo service nginx reload
