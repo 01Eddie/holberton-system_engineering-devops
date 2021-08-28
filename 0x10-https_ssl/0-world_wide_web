@@ -9,7 +9,7 @@ funcDisplay() {
         record=$(echo $recordIP | awk '{print $1}')
         IP=$(echo $recordIP | awk '{print $2}')
         # The subdomain web-02 is a A record and points to 54.89.38.100
-	    echo "The submain $2 is $record record and points to $IP"
+	    echo "The submain $2 is a $record record and points to $IP"
 }
 
 if [ $# -eq 1 ]
