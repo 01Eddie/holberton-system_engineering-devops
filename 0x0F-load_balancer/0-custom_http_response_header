@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-# Configure Nginx so that its HTTP response contains a custom header
-# Install nginx
+# Configures Ubuntu server with a custom HTTP header.
 sudo apt-get -y update
 sudo apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-echo "Holberton School" > /var/www/html/index.html
-sudo sed -i "11i\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
-redirect="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;/n/t%7D/n"
-sudo sed -i "37i\ $redirect" /etc/nginx/sites-available/default
-sudo service nginx start
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server;/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
 sudo service nginx restart
-sudo service nginx reload
