@@ -22,4 +22,3 @@ elif [ $# -eq 2 ]
 then
     funcDisplay $1 $2
 fi
-exit 0
