@@ -1,25 +1,24 @@
 #!/usr/bin/env bash
 # write a Bash script that will display information about subdomains
 # The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]
-# awk 
-funcDisplay(){
-#  dig www.holberton.online | grep -A1 'ANSWER SECTION:'
+# dig www.holberton.online | grep -A1 'ANSWER SECTION:'
 # ;; ANSWER SECTION:
 # www.holberton.online.   87  IN  A   54.210.47.110
-recordIP=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk '{print $4,$5}')
-record=$(echo $recordIP | awk '{print $1}')
-IP=$(echo $recordIP | awk '{print $2}')
-# The subdomain web-02 is a A record and points to 54.89.38.100
-echo "The submain $2 is $record record and points to $IP"
+funcDisplay() {
+        recordIP=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk '{print $4,$5}')
+        record=$(echo $recordIP | awk '{print $1}')
+        IP=$(echo $recordIP | awk '{print $2}')
+        # The subdomain web-02 is a A record and points to 54.89.38.100
+	    echo "The subdomain $2 is a $record record and points to $IP"
 }
+
 if [ $# -eq 1 ]
 then
-funcDisplay $1 www
-funcDisplay $1 lb-01
-funcDisplay $1 web-01
-funcDisplay $1 web-02
+	funcDisplay $1 www
+    funcDisplay $1 lb-01
+    funcDisplay $1 web-01
+    funcDisplay $1 web-02
 elif [ $# -eq 2 ]
 then
-funcDisplay $1 $2
+    funcDisplay $1 $2
 fi
-exit 0
