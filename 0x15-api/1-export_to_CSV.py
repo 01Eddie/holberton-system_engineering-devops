@@ -8,9 +8,9 @@ from sys import argv
 
 def export_to_CSV(sizeofReq):
     """ The task define export to the CSV format"""
+
     # Variables
     allTasks = []
-    count = 0
 
     link = "https://jsonplaceholder.typicode.com"
 
@@ -22,7 +22,7 @@ def export_to_CSV(sizeofReq):
         format(link, sizeofReq))
 
     # Get the json from responses
-    name = usersRes.json().get('name')
+    name = usersRes.json().get('username')
     todosJson = todosRes.json()
 
     # Save the employee Name -- Loop the tasks and save
