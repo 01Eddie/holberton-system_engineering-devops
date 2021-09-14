@@ -42,4 +42,4 @@ def export_to_CSV(sizeofReq):
 
 
 if __name__ == '__main__':
-    export_to_CSV(argv[1])
+    export_to_CSV(int(argv[1]))
