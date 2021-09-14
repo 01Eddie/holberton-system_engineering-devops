@@ -1,12 +1,12 @@
 #!/usr/bin/python3
+""" Script that, using this REST API, for a given employee ID, returns
+    information about his/her TODO list progress."""
 import requests
 from sys import argv
 
 
 def get_employee(sizeofReq):
-    """
-    Script that, using this REST API, for a given employee ID, returns
-    information about his/her TODO list progress."""
+    """ Use API from jsonplaceholder """
 
     # Variables
     taskList = []
