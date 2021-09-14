@@ -8,7 +8,7 @@ from sys import argv
 
 def export_to_CSV(sizeofReq):
     """ The task define export to the CSV format"""
-    """ 
+
     # Variables
     allTasks = []
 
@@ -36,36 +36,7 @@ def export_to_CSV(sizeofReq):
         csvWriter.writerows(allTasks)
 
     return 0
- """
-    username = ''
-    allTasks = []
 
-    # Do GET requests
-    usersRes = requests.get(
-        "https://jsonplaceholder.typicode.com/users/{}".format(sizeofReq))
-    todosRes = requests.get(
-        "https://jsonplaceholder.typicode.com/users/{}/todos".
-        format(sizeofReq))
 
-    # Get the json from responses
-    username = usersRes.json().get('username')
-    todosJson = todosRes.json()
-    # Save the employee Name
-
-    # Loop through and save
-    for task in todosJson:
-        taskRow = []
-        taskRow.append(sizeofReq)
-        taskRow.append(username)
-        taskRow.append(task.get('completed'))
-        taskRow.append(task.get('title'))
-        allTasks.append(taskRow)
-
-    with open("{}.csv".format(sizeofReq), "w") as csvFile:
-        csvwriter = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
-        csvwriter.writerows(allTasks)
-
-    return 0
-    
 if __name__ == '__main__':
     export_to_CSV(int(argv[1]))
