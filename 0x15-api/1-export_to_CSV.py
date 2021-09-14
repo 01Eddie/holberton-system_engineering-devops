@@ -15,11 +15,8 @@ def export_to_CSV(sizeofReq):
     link = "https://jsonplaceholder.typicode.com"
 
     # get requests
-    usersRes = requests.get(
-        "{}/users/{}".format(link, sizeofReq))
-    todosRes = requests.get(
-        "{}/users/{}/todos".
-        format(link, sizeofReq))
+    usersRes = requests.get("{}/users/{}".format(link, sizeofReq))
+    todosRes = requests.get("{}/users/{}/todos".format(link, sizeofReq))
 
     # Get the json from responses
     name = usersRes.json().get('username')
