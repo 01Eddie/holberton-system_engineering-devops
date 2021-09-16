@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-""" Using what you did in the task #0, extend your Python script to export data in the JSON format. """
+""" Using what you did in the task #0, extend your Python script to export
+data in the JSON format. """
 import json
 import requests
 
+
 def all_json():
-     # Variables
+    # Variables
     userTask = {}
 
     link = "https://jsonplaceholder.typicode.com"
@@ -31,6 +33,7 @@ def all_json():
     nameFile = "todo_all_employees.json"
     with open(nameFile, "w") as jsonFile:
         json.dump(userTask, jsonFile)
+
 
 if __name__ == '__main__':
     all_json()
