@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-1-how many subs?
+0 - how many subs?
 prototype: number_of_subscribers(subreddit)
 """
 import requests
