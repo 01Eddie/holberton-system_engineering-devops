@@ -18,4 +18,5 @@ def top_ten(subreddit):
     if response.status_code == 200:
         for post in posts:
             print(post.get('data', {}).get('title', None))
-    print(None)
+    else:
+        print(None)
