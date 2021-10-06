@@ -71,7 +71,7 @@ server {
 	}
 
 # 	Task 03 of 0x1A. Application server
-	location /airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
+	location ~ ^/airbnb-dynamic/number_odd_or_even/([0-9]+)$ {
 		
 		proxy_pass http://0.0.0.0:5001
 	}
